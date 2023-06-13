@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent Master
 
     tools{
         maven 'Maven_3.9.0'
