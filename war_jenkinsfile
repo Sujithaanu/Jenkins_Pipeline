@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     tools{
-        maven 'Maven_3.9.1'
+        maven 'Maven_3.9.0'
     }
     stages{
         stage('SCM checkout'){
@@ -19,9 +19,9 @@ pipeline{
             steps{
                 withSonarQubeEnv("Sonarqube") {
                     sh "${tool('Sonar_4.8')}/bin/sonar-scanner \
-                    -Dsonar.host.url=http://ec2-15-207-110-45.ap-south-1.compute.amazonaws.com:9000/ \
-                    -Dsonar.login=sqp_59794d82a5521a58c16dd36e5bf5e5675b77942f \
-                    -Dsonar.projectKey=Maven-Java \
+                    -Dsonar.host.url=http://ec2-3-110-155-117.ap-south-1.compute.amazonaws.com:9000/ \
+                    -Dsonar.login=sqp_6ce513a328a93231d8c431287c04adc2232c54ca \
+                    -Dsonar.projectKey=java-maven-war-app \
                     -Dsonar.java.binaries=target"
                 }
             }
